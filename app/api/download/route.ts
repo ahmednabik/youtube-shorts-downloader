@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   try {
     const { url } = await req.json();
   
-    const stream = await downloadVideo(url);
+    const { stream, contentLength } = await downloadVideo(url);
     
     // // Add error handling for the stream
     // stream.on('error', (error: any) => {
@@ -31,6 +31,7 @@ export async function POST(req: Request) {
     const headers = new Headers(response.headers);
     headers.set('Content-Type', 'video/mp4');
     headers.set('Content-Disposition', 'attachment; filename="youtube-shorts.mp4"');
+    headers.set('Content-Length', contentLength);
 
     // Return a new Response with the stream and headers
     return new Response(stream, {

@@ -29,10 +29,16 @@ export async function downloadVideo(url: string) {
       );
     }
 
+        // Create the stream with the specific format
+        const stream = ytdl(url, {
+          format: format
+        });
+
     // Create the stream with the specific format
-    return ytdl(url, {
-      format: format
-    });
+    return {
+      stream,
+      contentLength: format.contentLength
+    };
 
   } catch (error: any) {
     console.error('Download error details:', {

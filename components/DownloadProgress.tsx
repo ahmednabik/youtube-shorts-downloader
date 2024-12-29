@@ -16,9 +16,13 @@ export function DownloadProgress({ progress }: DownloadProgressProps) {
   };
 
   return (
-    <div className="space-y-2">
-      <Progress value={progress.percentage} />
-      <div className="text-sm text-muted-foreground">
+    <div className="space-y-2 w-full">
+      <Progress
+        value={progress.percentage}
+        className="h-6 bg-gray-200 dark:bg-gray-700"
+        // indicatorClassName="bg-red-600 transition-all"
+      />
+      <div className="text-sm text-muted-foreground text-left">
         {formatBytes(progress.downloaded)} / {formatBytes(progress.total)}
       </div>
     </div>
