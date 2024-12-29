@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     // });
     
     // Create a standard web Response with the stream
-    const response = new Response(stream);
+    const response = new Response(stream as any);
     
     // Set the headers
     const headers = new Headers(response.headers);
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     headers.set('Content-Length', contentLength);
 
     // Return a new Response with the stream and headers
-    return new Response(stream, {
+    return new Response((stream as any), {
       headers,
       status: 200,
     });
