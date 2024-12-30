@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -40,6 +40,17 @@ export default function DownloadMain() {
   const [totalBytes, setTotalBytes] = useState<number>(0);
   const [loadedBytes, setloadedBytes] = useState<number>(0);
 
+  useEffect(() => {
+    if (videoInfo && selectedFormat) {
+      const format = videoInfo.formats.find(
+        (format) => format.formatId === selectedFormat
+      );
+      if (format) {
+        setTotalBytes(parseInt(format.size, 10) * 1024 * 1024);
+      }
+    }
+  }, [selectedFormat, videoInfo]);
+
   const handleDownload = async () => {
     if (!url.trim()) {
       toast({
@@ -68,13 +79,6 @@ export default function DownloadMain() {
         throw new Error("Download failed");
       }
 
-      const contentLength = response.headers.get("Content-Length");
-      console.log("Content Length on DownloadMain", contentLength);
-      const totalSize = contentLength ? parseInt(contentLength, 10) : 0;
-      console.log("totalSize on DownloadMain", totalSize);
-      setTotalBytes(totalSize);
-      console.log("totalBytes state on DownloadMain", totalBytes);
-
       const reader = response.body?.getReader();
       const chunks = [];
       let receivedBytes = 0;
@@ -88,7 +92,7 @@ export default function DownloadMain() {
         setloadedBytes(receivedBytes);
 
         // Calculate progress
-        const progress = totalSize ? (receivedBytes / totalSize) * 100 : 0;
+        const progress = totalBytes ? (receivedBytes / totalBytes) * 100 : 0;
         setProgressBar(progress);
       }
 
