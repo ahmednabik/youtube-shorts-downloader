@@ -156,14 +156,14 @@ export default function DownloadMain() {
   };
 
   return (
-    <Card className="bg-gray-900 shadow-sm border dark:bg-gray-800 max-w-7xl mx-auto min-h-[192px]">
+    <Card className=" bg-gray-900 shadow-sm border dark:bg-gray-800 max-w-7xl mx-auto min-h-[172px]">
       <CardContent className="p-6 w-full mx-auto items-center justify-center text-center">
         <div className="flex flex-col md:flex-row gap-3 ">
           <Input
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="Paste YouTube video URL here..."
+            placeholder="Paste youtube shorts/video URL here..."
             className="flex-1 py-2 bg-white text-gray-800"
           />
           <Button
@@ -187,7 +187,7 @@ export default function DownloadMain() {
         {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
         {!videoInfo && (
           <Image
-            alt="Youtube thumbnail downloader"
+            alt="Youtube Shorts Downloader"
             src={Arrow}
             className="absolute left-4 xl:left-28 top-74 size-40 animate-arrow hidden md:block"
           />

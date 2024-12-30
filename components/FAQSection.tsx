@@ -9,34 +9,36 @@ import { Card, CardContent } from "@/components/ui/card";
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What is a YouTube thumbnail?",
+      question: "How can I download YouTube Shorts videos to my device?",
       answer:
-        "A YouTube thumbnail is a static image that represents a video on YouTube. It acts as a preview and is designed to attract viewers to click on and watch the video. Thumbnails play a crucial role in a video's success on the platform.",
+        "Our YouTube Shorts video downloader makes it simple to save Shorts directly to your phone, tablet, or computer. Just paste the Shorts URL into our converter tool, select your preferred quality and format, and download your favorite vertical videos in seconds – no registration required.",
     },
     {
-      question: "Why are YouTube thumbnails important?",
+      question:
+        "What's the maximum quality available when saving YouTube Shorts?",
       answer:
-        "YouTube thumbnails are important because they're often the first thing viewers see. A well-designed thumbnail can significantly increase click-through rates and views. They help in branding, conveying the video's content quickly, and standing out in search results and recommended video sections.",
+        "Our Shorts video saver supports downloading in the highest quality available, up to 1080p HD resolution. You can choose between different quality options to balance between video resolution and file size, ensuring your downloaded short-form content looks great on any device.",
     },
     {
-      question: "What are the different YouTube thumbnail sizes?",
+      question: "Is it safe to use an online YouTube Shorts downloader?",
       answer:
-        "YouTube offers thubnails in various sizes: 1280x720 pixels (HD), 640x480 pixels (SD), 480x360 pixels (High quality), 320x180 pixels (Medium quality), and 120x90 pixels (Default). The recommended size for best quality across all devices is 1280x720 pixels with a minimum width of 640 pixels. You can download thumbnail in any resolution using this free Youtube thumbnail grabber tool",
+        "Yes, our YouTube Shorts video grabber is completely secure and web-based, requiring no software installation. We use HTTPS encryption to protect your data and don't store any personal information. Unlike risky third-party apps, our platform provides a safe way to save Shorts videos.",
     },
     {
-      question: "Can I download YouTube thumbnails without special tools?",
+      question: "Can I download YouTube Shorts on my mobile phone?",
       answer:
-        "Yes, you can manually download YouTube thumbnails by manipulating the video's URL. However, tools like this YT Thumbnail Downloader make this process much easier and provide access to all available thumbnail sizes with just a few clicks.",
+        "Absolutely! Our mobile-friendly Shorts video converter works seamlessly on both Android and iOS devices. Whether you're using Safari, Chrome, or any other mobile browser, you can easily save viral Shorts content for offline viewing on your smartphone.",
     },
     {
-      question: "Are there copyright concerns with using YouTube thumbnails?",
+      question:
+        "Do I need to install any additional software to download YouTube Shorts?",
       answer:
-        "Yes, there can be copyright issues when you download thumbnail from youtube and use it somewhere else without permission. The thumbnail is typically a frame from the video or a custom image created by the video owner. Using these images without permission, especially for commercial purposes, may infringe on copyright. Always seek permission or use thumbnails from your own videos.",
+        "No, our online YouTube Shorts extractor works directly in your browser without any downloads or plugins. It's a convenient web-based solution for saving short-form videos, eliminating the need for potentially harmful third-party applications or software installations.",
     },
     {
-      question: "How can I create eye-catching YouTube thumbnails?",
+      question: "How do I save multiple YouTube Shorts at once?",
       answer:
-        "To create eye-catching YouTube thumbnails: 1) Use high-contrast, vibrant colors, 2) Include clear, readable text, 3) Show emotion or action in images, 4) Be consistent with your branding, 5) Use high-quality images, and 6) Ensure the thumbnail accurately represents your video content. Many creators use tools like Canva or Adobe Photoshop for thumbnail creation. For inspiration, you can get youtube thumbnails from your competitors and study different aspects of them to learn.",
+        "Our batch YouTube Shorts downloader feature lets you save multiple vertical videos simultaneously. Simply enter multiple Shorts URLs, and our tool will process them in parallel, saving you time when downloading collections of short-form content for offline viewing or content creation.",
     },
   ];
 

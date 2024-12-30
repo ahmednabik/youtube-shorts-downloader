@@ -9,8 +9,35 @@ import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "YouTube Shorts Downloader",
-  description: "Download YouTube Shorts videos in your preferred quality",
+  metadataBase: new URL("https://youtube-shorts-downloader.com"),
+  title: "Youtube Shorts Downloader - FREE HD Download",
+  description:
+    "Download youtube shorts in all HD with a single click for free. Just copy paste any youtube video link and download the short to any device.",
+  alternates: {
+    canonical: "https://youtube-shorts-downloader.com",
+  },
+  openGraph: {
+    title: "Youtube Shorts Downloader - FREE HD Download",
+    description:
+      "Download youtube shorts in all HD with a single click for free. Just copy paste any youtube video link and download the short to any device.",
+    url: "https://youtube-shorts-downloader.com",
+    siteName: "YTS Downloader",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -47,20 +74,20 @@ export default function RootLayout({
               </Link>
             </div>
             <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} YTTDownloader. All rights reserved.
+              © {new Date().getFullYear()} YTS Downloader. All rights reserved.
             </p>
           </div>
         </footer>
-        {/* <Script
+        <Script
           defer
-          data-domain="youtubethumbnail-downloader.com"
+          data-domain="youtube-shorts-downloader.com"
           src="https://plausible.ahmednabik.com/js/script.js"
         />
         <Script id="plausible-setup">
           {`
             window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
           `}
-        </Script> */}
+        </Script>
       </body>
     </html>
   );

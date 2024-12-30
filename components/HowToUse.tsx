@@ -5,27 +5,27 @@ const HowToUse = () => {
   const steps = [
     {
       icon: <Link className="w-8 h-8 text-red-500" />,
-      title: "Copy YouTube URL",
+      title: "Copy Shorts URL",
       description:
-        "Find the YouTube video you want to download the thumbnail from and copy its URL from the address bar.",
+        "Find the YouTube Shorts video you want to download and copy its URL from the address bar on your mobile device or browser.",
     },
     {
       icon: <Clipboard className="w-8 h-8 text-red-500" />,
       title: "Paste URL",
       description:
-        "Paste the copied URL into the input field of our YouTube Thumbnail Downloader tool.",
+        "Paste the copied Shorts URL into the input field of our YouTube Shorts Downloader tool. The tool will automatically detect the video format.",
     },
     {
       icon: <Image className="w-8 h-8 text-red-500" />,
-      title: "Choose Resolution",
+      title: "Select Quality",
       description:
-        "After fetching the thumbnails, select your preferred resolution from the available options.",
+        "After processing the Shorts video, choose your preferred video quality from the available resolution options (up to 1080p HD).",
     },
     {
       icon: <Download className="w-8 h-8 text-red-500" />,
-      title: "Download Thumbnail",
+      title: "Download Video",
       description:
-        "Click the 'Download' button to save the thumbnail image to your device in your chosen resolution.",
+        "Click the 'Download' button to save the YouTube Shorts video to your device in your selected quality. The video will be ready for offline viewing.",
     },
   ];
 
@@ -33,7 +33,7 @@ const HowToUse = () => {
     <Card className="mt-12 bg-white shadow-sm border dark:bg-gray-800 max-w-7xl mx-auto">
       <CardContent className="p-6">
         <h2 className="text-2xl font-bold text-center mb-10">
-          How to Download Youtube Thumbnail?
+          How to Download YouTube Shorts?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
