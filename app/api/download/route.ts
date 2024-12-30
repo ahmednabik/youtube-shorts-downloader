@@ -9,20 +9,8 @@ export async function POST(req: Request) {
     const { url } = await req.json();
   
     const { stream, contentLength } = await downloadVideo(url);
-    
-    // // Add error handling for the stream
-    // stream.on('error', (error: any) => {
-    //   console.error('Stream error:', error);
-    // });
 
-    // // Add debug logging for stream events
-    // stream.on('data', (chunk: any) => {
-    //   console.log('Received chunk of size:', chunk.length);
-    // });
-
-    // stream.on('end', () => {
-    //   console.log('Stream ended');
-    // });
+    console.log("Content Length on api/download", contentLength)
     
     // Create a standard web Response with the stream
     const response = new Response(stream as any);

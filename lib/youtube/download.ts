@@ -22,8 +22,6 @@ export async function downloadVideo(url: string) {
       filter: 'audioandvideo'
     });
 
-    console.log(format)
-
     if (!format) {
       throw new YouTubeError(
         'No suitable format found',

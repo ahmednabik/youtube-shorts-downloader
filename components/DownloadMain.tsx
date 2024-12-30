@@ -69,8 +69,11 @@ export default function DownloadMain() {
       }
 
       const contentLength = response.headers.get("Content-Length");
+      console.log("Content Length on DownloadMain", contentLength);
       const totalSize = contentLength ? parseInt(contentLength, 10) : 0;
+      console.log("totalSize on DownloadMain", totalSize);
       setTotalBytes(totalSize);
+      console.log("totalBytes state on DownloadMain", totalBytes);
 
       const reader = response.body?.getReader();
       const chunks = [];

@@ -6,7 +6,7 @@ import { YouTubeError, YouTubeErrorCodes } from "@/lib/youtube/errors";
 
 export async function POST(req: Request) {
   const agent = ytdl.createAgent(JSON.parse(fs.readFileSync("cookies.json")));
-  console.log("Agent:", agent)
+ 
   try {
     const { url } = await req.json();
 
@@ -53,8 +53,6 @@ export async function POST(req: Request) {
         const bQuality = parseInt(b.qualityLabel);
         return bQuality - aQuality;
       });
-
-      console.log(info.videoDetails.thumbnails)
 
     return NextResponse.json({
       title: info.videoDetails.title,
