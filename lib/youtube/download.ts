@@ -1,8 +1,10 @@
 // const ytdl = require("@distube/ytdl-core");
 import ytdl from '@distube/ytdl-core';
 import { YouTubeError, YouTubeErrorCodes } from './errors';
+const fs = require("fs");
 
 export async function downloadVideo(url: string) {
+  const agent = ytdl.createAgent(JSON.parse(fs.readFileSync("cookies.json")));
   try {
     if (!ytdl.validateURL(url)) {
       throw new YouTubeError(
@@ -12,7 +14,7 @@ export async function downloadVideo(url: string) {
     }
 
     // First get the video info
-    const info = await ytdl.getInfo(url);
+    const info = await ytdl.getInfo(url, {agent});
     
     // Get available formats with both audio and video
     const format = ytdl.chooseFormat(info.formats, {
@@ -31,7 +33,8 @@ export async function downloadVideo(url: string) {
 
         // Create the stream with the specific format
         const stream = ytdl(url, {
-          format: format
+          format: format,
+          agent
         });
 
     // Create the stream with the specific format

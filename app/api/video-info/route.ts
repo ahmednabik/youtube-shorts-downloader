@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import ytdl from '@distube/ytdl-core';
+const fs = require("fs");
 import { YouTubeError, YouTubeErrorCodes } from "@/lib/youtube/errors";
 
+
 export async function POST(req: Request) {
+  const agent = ytdl.createAgent(JSON.parse(fs.readFileSync("cookies.json")));
+  console.log("Agent:", agent)
   try {
     const { url } = await req.json();
 
@@ -14,7 +18,7 @@ export async function POST(req: Request) {
     }
 
     // Get video info
-    const info = await ytdl.getInfo(url);
+    const info = await ytdl.getInfo(url, { agent });
 
     // Filter and format the video formats
     const formats = info.formats
