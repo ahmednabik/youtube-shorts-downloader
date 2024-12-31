@@ -4,6 +4,7 @@ import DownloadMain from "@/components/DownloadMain";
 import HowToUse from "@/components/HowToUse";
 import FAQSection from "@/components/FAQSection";
 import Script from "next/script";
+import BuyMeACoffee from "@/components/BuyMeACoffee";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         </p>
       </div>
       <DownloadMain />
+      <BuyMeACoffee />
       <HowToUse />
       <FAQSection />
     </div>
